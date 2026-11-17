@@ -66,6 +66,15 @@ export default function HomePage() {
       enabled: true,
     },
     {
+      // Merged 17 Nov 2026: both sides added a tile here — kept BOTH
+      // (rule 10: old code never replaces newer code).
+      title: "📊 Analytics",
+      desc: "Ask plain-English questions of your data.",
+      href: "/analytics",
+      color: "#0891b2",
+      enabled: true,
+    },
+    {
       title: "👑 Manage Admins",
       desc: "Invite, remove, or change roles of admins.",
       href: "/admins",
