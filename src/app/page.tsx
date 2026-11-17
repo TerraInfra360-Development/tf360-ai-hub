@@ -57,6 +57,15 @@ export default function HomePage() {
       enabled: true,
     },
     {
+      // WS4 (owner, 17 Nov 2026): per-feature cards + the brains' Q&A
+      // logs, the couldn't-answer bucket and the keep-asking bucket.
+      title: "AI Developments",
+      desc: "Cards per AI feature with the Q&A each brain asked — and what humans answered.",
+      href: "/developments",
+      color: "#7c3aed",
+      enabled: true,
+    },
+    {
       title: "👑 Manage Admins",
       desc: "Invite, remove, or change roles of admins.",
       href: "/admins",

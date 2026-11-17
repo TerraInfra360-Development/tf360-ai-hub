@@ -130,6 +130,44 @@ export function toggleFeature(featureId: string, enabled: boolean) {
   );
 }
 
+/* ============ AI Developments (WS4, owner 17 Nov 2026) ============ */
+
+export type AiDevCard = {
+  featureId: string;
+  calls30d: number;
+  errors30d: number;
+  lastUsedAt: number;
+  model: string;
+  provider: string;
+  questions?: number;
+  answered?: number;
+};
+
+export type AiQnaRow = {
+  featureId: string;
+  question: string;
+  kind: string;
+  status: "asked" | "answered" | "skipped";
+  answer: string;
+  assumption: string;
+  askedAt: number;
+  answeredAt: number;
+};
+
+export type AiRepeatRow = {
+  featureId: string;
+  question: string;
+  count: number;
+  lastAskedAt: number;
+};
+
+export function getAiDevelopments() {
+  return request<
+    undefined,
+    { cards: AiDevCard[]; recent: AiQnaRow[]; stuck: AiQnaRow[]; repeating: AiRepeatRow[] }
+  >("/v1/admin/ai-developments", "GET");
+}
+
 /* ============ Admins (super-admin only) ============ */
 
 export type AdminRow = {
